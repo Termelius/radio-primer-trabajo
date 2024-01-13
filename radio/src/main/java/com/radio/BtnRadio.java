@@ -1,12 +1,13 @@
 package com.radio;
 
-
 import java.io.IOException;
 import javafx.fxml.FXML;
 
 
-public class RadioBtn {
+public class BtnRadio {
     
+    private float[] SaveStation = new float[12];
+
     @FXML
     private void VolumeUp() throws IOException {
         
@@ -17,5 +18,13 @@ public class RadioBtn {
         
     }
 
-    
+    @FXML
+    private void PressPowerBtn() throws IOException {
+        
+    }
+
+    @FXML
+    private void AddStation() throws IOException {
+        
+    }
 }
