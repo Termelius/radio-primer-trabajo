@@ -1,36 +1,21 @@
 package com.Logic.classes;
 
 public class Estaciones {
-    private double estacionFM;
-    private int estacionAM;
+    private float[] estacionesFM;
+    private float[] estacionesAM ;
 
     public Estaciones() {
-        this.estacionFM = 87.9;
-        this.estacionAM = 530;
+        this.estacionesAM = new float[]{530, 540, 550, 560, 570, 580, 590, 600, 610, 620, 630, 640};
+        this.estacionesFM = new float[]{87.9f, 88.9f, 89.9f, 90.9f, 91.9f, 92.9f, 93.9f, 94.9f, 95.9f, 96.9f, 97.9f, 98.9f};
+
     }
 
-    public void cambiarEstacionFM(double nuevaEstacion) {
-        if (nuevaEstacion >= 87.9 && nuevaEstacion <= 107.9) {
-            this.estacionFM = nuevaEstacion;
-        } else {
-            System.out.println("La estación FM ingresada no es válida.");
-        }
+    public float[] getEstacionesFM() {
+        return estacionesFM;
     }
 
-    public void cambiarEstacionAM(int nuevaEstacion) {
-        if (nuevaEstacion >= 530 && nuevaEstacion <= 1610) {
-            this.estacionAM = nuevaEstacion;
-        } else {
-            System.out.println("La estación AM ingresada no es válida.");
-        }
-    }
-
-    public double obtenerEstacionFM() {
-        return this.estacionFM;
-    }
-
-    public int obtenerEstacionAM() {
-        return this.estacionAM;
+    public void setEstacionesFM(float[] estacionesFM) {
+        this.estacionesFM = estacionesFM;
     }
 }
 
