@@ -24,7 +24,12 @@ public class BtnRadio {
     }
 
     @FXML
-    private void AddStation() throws IOException {
+    private void Put_AddStation() throws IOException {
+        
+    }
+
+    @FXML
+    private void ShowStation() throws IOException {
         
     }
 }

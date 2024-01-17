@@ -1,10 +1,10 @@
 <mxfile host="65bd71144e">
     <diagram id="rv9lSFPqjTdXBc9GjLnV" name="UML">
-        <mxGraphModel dx="272" dy="1749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="325" dy="1428" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="76" style="edgeStyle=none;html=1;entryX=0.511;entryY=1.058;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2" target="57">
+                <mxCell id="76" style="edgeStyle=none;html=1;entryX=0.511;entryY=1.058;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="2" target="57" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="560" y="240"/>
@@ -26,7 +26,7 @@
                 <mxCell id="8" value="operations" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
                     <mxGeometry y="218" width="260" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="58" style="edgeStyle=none;html=1;entryX=1.003;entryY=0.592;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="10" target="9">
+                <mxCell id="58" style="edgeStyle=none;html=1;entryX=1.003;entryY=0.592;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="10" target="9" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="10" value="&amp;lt;&amp;lt;Estaciones&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Estaciones&lt;/b&gt;&lt;br&gt;{class}" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" parent="1" vertex="1">
@@ -51,13 +51,13 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="19" value="&amp;lt;&amp;lt;keyword&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;IRadio&lt;/b&gt;&lt;br&gt;{interface}" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
-                    <mxGeometry x="35" y="-226" width="270" height="195" as="geometry"/>
+                    <mxGeometry x="35" y="-226" width="265" height="280" as="geometry"/>
                 </mxCell>
                 <mxCell id="25" value="operations" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="19" vertex="1">
-                    <mxGeometry y="55" width="270" height="20" as="geometry"/>
+                    <mxGeometry y="55" width="265" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="26" value="&lt;p style=&quot;line-height: 3.6px;&quot;&gt;&lt;u&gt;+ AM = 0&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 3.6px;&quot;&gt;&lt;u&gt;+ FM = 1&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;+ guardarEstacion(estacion,banda,index): void&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;+ recuperarEstacion(index)&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="19" vertex="1">
-                    <mxGeometry y="75" width="270" height="120" as="geometry"/>
+                <mxCell id="26" value="&lt;p style=&quot;line-height: 3.6px;&quot;&gt;&lt;u&gt;+ AM = 0&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 3.6px;&quot;&gt;&lt;u&gt;+ FM = 1&lt;/u&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;+ guardarEstacion(estacion,banda,index): void&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;+ recuperarEstacion(index)&lt;/p&gt;&lt;p style=&quot;line-height: 12px;&quot;&gt;+ SetOn():bool&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;+ SetVolume(int VolumeNumber): void&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;+ SetEstacion(Float Estacion, int Banda): void&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;+&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;GetOn():bool&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;+ GetEstacion():float&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;+ GetBanda():int&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;+ GetVolume():int&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="19" vertex="1">
+                    <mxGeometry y="75" width="265" height="205" as="geometry"/>
                 </mxCell>
                 <mxCell id="9" value="&lt;p style=&quot;line-height: 12px;&quot;&gt;+ SetOn():bool&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;+ SetVolume(int VolumeNumber): void&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;+ SetEstacion(Float Estacion, int Banda): void&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;+&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;GetOn():bool&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;+ GetEstacion():float&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;+ GetBanda():int&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;+ GetVolume():int&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;line-height: 4.8px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=#990000;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="1" vertex="1">
                     <mxGeometry x="40" y="358" width="260" height="120" as="geometry"/>
@@ -80,26 +80,26 @@
                 <mxCell id="57" value="+ Start(Stage stage):void&lt;br&gt;&lt;u&gt;# SetRoot(String fileXML):void&lt;br&gt;- LoadFXML(String fxml)&lt;/u&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FCF9F7;" parent="50" vertex="1">
                     <mxGeometry y="123" width="230" height="77" as="geometry"/>
                 </mxCell>
-                <mxCell id="75" style="edgeStyle=none;html=1;entryX=0.291;entryY=-0.008;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="67" target="50">
+                <mxCell id="75" style="edgeStyle=none;html=1;entryX=0.291;entryY=-0.008;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="67" target="50" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="67" value="&amp;lt;&amp;lt;keyword&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;BtnRadio&lt;/b&gt;&lt;br&gt;{Class}" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;strokeColor=#3700CC;fillColor=#6a00ff;fontColor=#ffffff;" vertex="1" parent="1">
-                    <mxGeometry x="440" y="-560" width="140" height="203" as="geometry"/>
+                <mxCell id="67" value="&amp;lt;&amp;lt;keyword&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;BtnRadio&lt;/b&gt;&lt;br&gt;{Class}" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;strokeColor=#3700CC;fillColor=#6a00ff;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="425" y="-560" width="170" height="203" as="geometry"/>
                 </mxCell>
-                <mxCell id="68" value="attributes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="67">
-                    <mxGeometry y="55" width="140" height="20" as="geometry"/>
+                <mxCell id="68" value="attributes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="67" vertex="1">
+                    <mxGeometry y="55" width="170" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="69" value="SaveStations:float[12]" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="67">
-                    <mxGeometry y="75" width="140" height="20" as="geometry"/>
+                <mxCell id="69" value="SaveStations:float[12]" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="67" vertex="1">
+                    <mxGeometry y="75" width="170" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="72" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#FFF2F2;" vertex="1" parent="67">
-                    <mxGeometry y="95" width="140" height="8" as="geometry"/>
+                <mxCell id="72" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#FFF2F2;" parent="67" vertex="1">
+                    <mxGeometry y="95" width="170" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="73" value="operations" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="67">
-                    <mxGeometry y="103" width="140" height="20" as="geometry"/>
+                <mxCell id="73" value="operations" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="67" vertex="1">
+                    <mxGeometry y="103" width="170" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="74" value="VolumeUp():void&lt;br&gt;VolumeDown():void&lt;br&gt;PressOnBtn():void&lt;br&gt;AddStationBtn():void&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="67">
-                    <mxGeometry y="123" width="140" height="80" as="geometry"/>
+                <mxCell id="74" value="VolumeUp():void&lt;br&gt;VolumeDown():void&lt;br&gt;PressOnBtn():void&lt;br&gt;Put_AddStationBtn():void&lt;br&gt;ShowStation():void" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="67" vertex="1">
+                    <mxGeometry y="123" width="170" height="80" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
