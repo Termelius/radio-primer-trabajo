@@ -24,14 +24,14 @@ public class BtnRadio {
     @FXML
     private void VolumeUp(ActionEvent event) throws IOException {
         int currentVolume = MLJP.getVolume();
-        MLJP.setVolume(currentVolume + 1);
+        MLJP.setVolume(currentVolume + 5);
         updateVolumeLabel();
     }
 
     @FXML
     private void VolumeDown(ActionEvent event) throws IOException {
         int currentVolume = MLJP.getVolume();
-        MLJP.setVolume(currentVolume - 1);
+        MLJP.setVolume(currentVolume - 5);
         updateVolumeLabel();
     }
 

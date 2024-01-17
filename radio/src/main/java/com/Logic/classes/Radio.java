@@ -13,7 +13,7 @@ public class Radio implements IRadio {
         this.marca = "MLJP";
         this.banda = IRadio.AM;
         this.estacion = 530;
-        this.volume = 0;
+        this.volume = 50;
     }
 
     public void setEncendido(boolean encendido) {
