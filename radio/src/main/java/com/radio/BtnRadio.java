@@ -10,12 +10,16 @@ public class BtnRadio {
 
     @FXML
     private void VolumeUp() throws IOException {
-        
+        if(volumen<100){
+            volumen = Math.min(100,volumen + 5)
+        }    
     }
 
     @FXML
     private void VolumeDown() throws IOException {
-        
+        if(volumen<100){
+            volumen = Math.min(100,volumen - 5)
+        }  
     }
 
     @FXML
