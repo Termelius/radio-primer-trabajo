@@ -9,7 +9,7 @@
 
 <VBox alignment="CENTER" prefHeight="516.0" prefWidth="822.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.radio.BtnRadio">
    <children>
-      <Label prefHeight="17.0" prefWidth="49.0" text="Label" translateX="300.0" translateY="230.0" />
+      <Label fx:id = "volumeLabel"  prefHeight="17.0" prefWidth="49.0" text="Label" translateX="300.0" translateY="230.0" />
       <MenuButton mnemonicParsing="false" text="Stations" translateX="-280.0" translateY="205.0">
         <items>
           <MenuItem mnemonicParsing="false" text="1" />
@@ -31,9 +31,9 @@
       </MenuButton>
       <Label prefHeight="17.0" prefWidth="329.0" text="Label" translateY="132.0" />
       <Button mnemonicParsing="false" text="ON/OFF" translateX="-300.0" translateY="-100.0" />
-      <Label text="Volume" translateX="300.0" translateY="150.0" />
+      <Label  text="Volume" translateX="300.0" translateY="150.0"  />
       <Button fx:id="primaryButton" onAction="#VolumeUp" prefHeight="25.0" prefWidth="68.0" text="Up" translateX="300.0" translateY="50.0" />
-      <Button fx:id="primaryButton1" onAction="#VolumeUp" prefHeight="25.0" prefWidth="68.0" text="Down" translateX="300.0" translateY="35.0" />
+      <Button fx:id="primaryButton1" onAction="#VolumeDown" prefHeight="25.0" prefWidth="68.0" text="Down" translateX="300.0" translateY="35.0" />
       <Button mnemonicParsing="false" text="&lt;-" translateX="-75.0" translateY="-49.0" />
       <Button mnemonicParsing="false" text="-&gt;" translateX="75.0" translateY="-94.0" />
       <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="AM/FM" translateY="-139.0" />

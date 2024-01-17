@@ -1,25 +1,38 @@
 package com.radio;
-
+import com.Logic.classes.Radio;
+import com.Logic.classes.Estaciones;
 import java.io.IOException;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 
 
 public class BtnRadio {
     
+    private Radio MLJP = new Radio();
+
     private float[] SaveStation = new float[12];
+    @FXML
+    private Label volumeLabel;
 
     @FXML
-    private void VolumeUp() throws IOException {
-        if(volumen<100){
-            volumen = Math.min(100,volumen + 5)
-        }    
+    private void updateVolumeLabel() {
+        volumeLabel.setText(String.valueOf(MLJP.getVolume()));
     }
 
     @FXML
-    private void VolumeDown() throws IOException {
-        if(volumen<100){
-            volumen = Math.min(100,volumen - 5)
-        }  
+    private void VolumeUp(ActionEvent event) throws IOException {
+        int currentVolume = MLJP.getVolume();
+        MLJP.setVolume(currentVolume + 1);
+        updateVolumeLabel();
+    }
+
+    @FXML
+    private void VolumeDown(ActionEvent event) throws IOException {
+        int currentVolume = MLJP.getVolume();
+        MLJP.setVolume(currentVolume - 1);
+        updateVolumeLabel();
     }
 
     @FXML
