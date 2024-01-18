@@ -30,13 +30,13 @@
          </VBox.margin>
       </MenuButton>
       <Label fx:id = "RadioLabel" prefHeight="17.0" prefWidth="329.0" text="Radio Stations" translateY="132.0" />
-      <Button mnemonicParsing="false" text="ON/OFF" translateX="-300.0" translateY="-100.0" />
+      <Button mnemonicParsing="false" text="ON/OFF" translateX="-300.0" translateY="-100.0" onAction = "#PressPowerBtn"/>
       <Label  text="Volume" translateX="300.0" translateY="150.0"  />
       <Button fx:id="primaryButton" onAction="#VolumeUp" prefHeight="25.0" prefWidth="68.0" text="Up" translateX="300.0" translateY="50.0" />
       <Button fx:id="primaryButton1" onAction="#VolumeDown" prefHeight="25.0" prefWidth="68.0" text="Down" translateX="300.0" translateY="35.0" />
-      <Button fx:id = "UPRadio" mnemonicParsing="false" text="&lt;-" translateX="-75.0" translateY="-49.0" />
-      <Button fx:id = "DOWNRadio" mnemonicParsing="false" text="-&gt;" translateX="75.0" translateY="-94.0" />
-      <Button fx:id = "ChangeBanda" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="AM/FM" translateY="-139.0" />
+      <Button fx:id = "DownRadio" mnemonicParsing="false" text="&lt;-" translateX="-75.0" translateY="-49.0" onAction = "#ChangeStationDown"/>
+      <Button fx:id = "UpRadio" mnemonicParsing="false" text="-&gt;" translateX="75.0" translateY="-94.0" onAction = "#ChangeStationUP" />
+      <Button fx:id = "ChangeBanda" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="AM/FM" translateY="-139.0" onAction = "#ChangeBand"/>
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

@@ -64,22 +64,23 @@ public class BtnRadio {
 
     @FXML
     private void ChangeStationUP() throws IOException {
+        System.out.println("ChangeStationUP");
         if (MLJP.getEncendido()){
-            float currentStation = MLJP.getEstacion();
             switch (MLJP.getBanda()) {
                 case IRadio.AM:
-                    if (currentStation == 1610) {
-                        MLJP.setEstacion(530, IRadio.AM);
+                    if (MLJP.getEstacion() == 530) {
+                        MLJP.setEstacion(1610, IRadio.AM);
                     } else {
-                        MLJP.setEstacion(currentStation + 10, IRadio.AM);
+                        MLJP.setEstacion(MLJP.getEstacion() + 10, IRadio.AM);
+                        System.out.println(MLJP.getEstacion());
                     }
                     break;
-            
                 case IRadio.FM:
-                    if (currentStation == 107.9) {
-                        MLJP.setEstacion(87.9f, IRadio.FM);
+                    if (MLJP.getEstacion() == 87.9) {
+                        MLJP.setEstacion(107.9f, IRadio.FM);
                     } else {
-                        MLJP.setEstacion(currentStation + 0.2f, IRadio.FM);
+                        MLJP.setEstacion(MLJP.getEstacion() + 0.2f, IRadio.FM);
+                        System.out.println(MLJP.getEstacion());
                     }
                     break;
             }
@@ -87,7 +88,9 @@ public class BtnRadio {
     }
 
     @FXML
+    // TODO: Fix this
     private void ChangeStationDown() throws IOException {
+        System.out.println("ChangeStationDown");
         if (MLJP.getEncendido()){
             switch (MLJP.getBanda()) {
                 case IRadio.AM:
@@ -95,15 +98,37 @@ public class BtnRadio {
                         MLJP.setEstacion(1610, IRadio.AM);
                     } else {
                         MLJP.setEstacion(MLJP.getEstacion() - 10, IRadio.AM);
+                        System.out.println(MLJP.getEstacion());
                     }
                     break;
-            
                 case IRadio.FM:
                     if (MLJP.getEstacion() == 87.9) {
                         MLJP.setEstacion(107.9f, IRadio.FM);
                     } else {
                         MLJP.setEstacion(MLJP.getEstacion() - 0.2f, IRadio.FM);
+                        System.out.println(MLJP.getEstacion());
                     }
+                    break;
+            }
+        }
+    }
+
+    @FXML
+    private void ChangeBand() throws IOException {
+        if (MLJP.getEncendido()){
+            switch (MLJP.getBanda()) {
+                case IRadio.FM:
+                    MLJP.setBanda();
+                    MLJP.setEstacion(530, IRadio.AM);
+                    System.out.println("AM");
+                    System.out.println(MLJP.getBanda());
+
+                    break;
+                case IRadio.AM:
+                    MLJP.setBanda();
+                    MLJP.setEstacion(87.9f, IRadio.FM);
+                    System.out.println("FM");
+                    System.out.println(MLJP.getBanda());
                     break;
             }
         }
