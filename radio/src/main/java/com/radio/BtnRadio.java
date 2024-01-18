@@ -3,9 +3,13 @@ import com.Logic.classes.Radio;
 import com.Logic.classes.Estaciones;
 import java.io.IOException;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
+import javafx.util.Duration;
 
 import com.Logic.interfaces.IRadio;
 
@@ -13,6 +17,9 @@ public class BtnRadio {
     
     private Radio MLJP = new Radio();
 
+    private static final Duration HOLD_DURATION = Duration.seconds(2);
+    private Timeline holdTimer;
+    private boolean isHolding = false;
 
     @FXML
     private Label volumeLabel;
@@ -57,9 +64,45 @@ public class BtnRadio {
         
     }
 
+    
+
     @FXML
-    private void Put_AddStation() throws IOException {
-        
+    private void Put_AddStation(ActionEvent event) throws IOException {
+        if (MLJP.getEncendido()) {
+            MenuItem menuItem = (MenuItem) event.getSource();
+            int indx = Integer.parseInt(menuItem.getText());
+
+            startHoldTimer();
+            isHolding = true;
+    
+            if (isHolding && holdTimer != null && holdTimer.getCurrentTime().greaterThanOrEqualTo(HOLD_DURATION)) {
+                MLJP.guardarEstacion(MLJP.getEstacion(), MLJP.getBanda(), (indx - 1));
+                System.out.println("Station Saved");
+            } else {
+                System.out.println("Radio station: " + indx);
+                System.out.println( MLJP.recuperarEstacion((indx - 1)));
+
+                if (MLJP.recuperarEstacion((indx - 1)) - 500 >= 0){
+                MLJP.setEstacion((MLJP.recuperarEstacion((indx - 1))), IRadio.AM);
+                System.out.println(MLJP.getBanda());
+                }
+                else if (MLJP.recuperarEstacion((indx - 1)) - 500 < 0){
+                    MLJP.setEstacion((MLJP.recuperarEstacion((indx - 1))), IRadio.FM);
+                    System.out.println(MLJP.getBanda());
+                }
+            }
+        }
+    }
+    
+
+
+    private void startHoldTimer() {
+        isHolding = true;
+        holdTimer = new Timeline(new KeyFrame(HOLD_DURATION, e -> {
+            System.out.println("HOLD");
+        }));
+        holdTimer.play();
+
     }
 
     @FXML

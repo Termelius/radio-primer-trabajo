@@ -12,18 +12,18 @@
       <Label fx:id = "volumeLabel"  prefHeight="17.0" prefWidth="49.0" text="Label" translateX="300.0" translateY="230.0" />
       <MenuButton mnemonicParsing="false" text="Stations" translateX="-280.0" translateY="205.0">
         <items>
-          <MenuItem mnemonicParsing="false" text="1" />
-            <MenuItem mnemonicParsing="false" text="2" />
-            <MenuItem mnemonicParsing="false" text="3" />
-            <MenuItem mnemonicParsing="false" text="4" />
-            <MenuItem mnemonicParsing="false" text="5" />
-            <MenuItem mnemonicParsing="false" text="6" />
-            <MenuItem mnemonicParsing="false" text="7" />
-            <MenuItem mnemonicParsing="false" text="8" />
-            <MenuItem mnemonicParsing="false" text="9" />
-            <MenuItem mnemonicParsing="false" text="10" />
-            <MenuItem mnemonicParsing="false" text="11" />
-            <MenuItem mnemonicParsing="false" text="12" />
+          <MenuItem mnemonicParsing="false" text="1" onAction = "#Put_AddStation"/>
+            <MenuItem mnemonicParsing="false" text="2" onAction = "#Put_AddStation"/>
+            <MenuItem mnemonicParsing="false" text="3" onAction = "#Put_AddStation"/>
+            <MenuItem mnemonicParsing="false" text="4" onAction = "#Put_AddStation"/>
+            <MenuItem mnemonicParsing="false" text="5" onAction = "#Put_AddStation"/>
+            <MenuItem mnemonicParsing="false" text="6" onAction = "#Put_AddStation"/>
+            <MenuItem mnemonicParsing="false" text="7" onAction = "#Put_AddStation"/>
+            <MenuItem mnemonicParsing="false" text="8" onAction = "#Put_AddStation"/>
+            <MenuItem mnemonicParsing="false" text="9" onAction = "#Put_AddStation"/>
+            <MenuItem mnemonicParsing="false" text="10" onAction = "#Put_AddStation"/>
+            <MenuItem mnemonicParsing="false" text="11" onAction = "#Put_AddStation"/>
+            <MenuItem mnemonicParsing="false" text="12" onAction = "#Put_AddStation"/>
         </items>
          <VBox.margin>
             <Insets />
