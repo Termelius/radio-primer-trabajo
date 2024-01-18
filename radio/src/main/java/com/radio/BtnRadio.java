@@ -1,29 +1,24 @@
 package com.radio;
-import com.Logic.classes.Radio;
-import com.Logic.classes.Estaciones;
 import java.io.IOException;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
+
+import com.Logic.classes.Radio;
+import com.Logic.interfaces.IRadio;
+
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
-import javafx.util.Duration;
-
-import com.Logic.interfaces.IRadio;
 
 public class BtnRadio {
     
     private Radio MLJP = new Radio();
 
-    private static final Duration HOLD_DURATION = Duration.seconds(2);
-    private Timeline holdTimer;
-    private boolean isHolding = false;
-
     @FXML
     private Label volumeLabel;
-    private Label RadioLabel;
+    @FXML
+    private Label radiolabel;
 
 
     @FXML
@@ -33,7 +28,10 @@ public class BtnRadio {
 
     @FXML
     private void updateRadioLabel() {
-        RadioLabel.setText(String.valueOf(MLJP.getEstacion()));
+        if (radiolabel == null) {
+            System.out.println("radiolabel is null");
+        }
+        radiolabel.setText(String.valueOf(MLJP.getEstacion()));
     }
 
     @FXML
@@ -64,45 +62,28 @@ public class BtnRadio {
         
     }
 
-    
 
     @FXML
-    private void Put_AddStation(ActionEvent event) throws IOException {
+    private void AddStation(ActionEvent event) throws IOException {
         if (MLJP.getEncendido()) {
             MenuItem menuItem = (MenuItem) event.getSource();
             int indx = Integer.parseInt(menuItem.getText());
 
-            startHoldTimer();
-            isHolding = true;
-    
-            if (isHolding && holdTimer != null && holdTimer.getCurrentTime().greaterThanOrEqualTo(HOLD_DURATION)) {
-                MLJP.guardarEstacion(MLJP.getEstacion(), MLJP.getBanda(), (indx - 1));
-                System.out.println("Station Saved");
-            } else {
-                System.out.println("Radio station: " + indx);
-                System.out.println( MLJP.recuperarEstacion((indx - 1)));
+            MLJP.guardarEstacion(MLJP.getEstacion(), MLJP.getBanda(), (indx - 1));
+            System.out.println("Station Saved");
 
-                if (MLJP.recuperarEstacion((indx - 1)) - 500 >= 0){
-                MLJP.setEstacion((MLJP.recuperarEstacion((indx - 1))), IRadio.AM);
-                System.out.println(MLJP.getBanda());
-                }
-                else if (MLJP.recuperarEstacion((indx - 1)) - 500 < 0){
-                    MLJP.setEstacion((MLJP.recuperarEstacion((indx - 1))), IRadio.FM);
-                    System.out.println(MLJP.getBanda());
-                }
-            }
         }
     }
-    
+    @FXML
+    private void PutStation(ActionEvent event) throws IOException {
+        if (MLJP.getEncendido()) {
+            MenuItem menuItem = (MenuItem) event.getSource();
+            int indx = Integer.parseInt(menuItem.getText());
 
-
-    private void startHoldTimer() {
-        isHolding = true;
-        holdTimer = new Timeline(new KeyFrame(HOLD_DURATION, e -> {
-            System.out.println("HOLD");
-        }));
-        holdTimer.play();
-
+            MLJP.setEstacion(MLJP.recuperarEstacion(indx-1), MLJP.getBanda());
+            System.out.println("Station Loaded");
+            updateRadioLabel();
+        }
     }
 
     @FXML
@@ -111,46 +92,53 @@ public class BtnRadio {
         if (MLJP.getEncendido()){
             switch (MLJP.getBanda()) {
                 case IRadio.AM:
-                    if (MLJP.getEstacion() == 530) {
-                        MLJP.setEstacion(1610, IRadio.AM);
+                    if (MLJP.getEstacion()  > 1610) {
+                        MLJP.setEstacion(530, IRadio.AM);
+                        System.out.println(MLJP.getEstacion());
                     } else {
                         MLJP.setEstacion(MLJP.getEstacion() + 10, IRadio.AM);
                         System.out.println(MLJP.getEstacion());
                     }
+                    updateRadioLabel();
                     break;
                 case IRadio.FM:
-                    if (MLJP.getEstacion() == 87.9) {
-                        MLJP.setEstacion(107.9f, IRadio.FM);
+                    if (MLJP.getEstacion() > 107.9f) {
+                        MLJP.setEstacion(87.9f, IRadio.FM);
+                        System.out.println(MLJP.getEstacion());
                     } else {
                         MLJP.setEstacion(MLJP.getEstacion() + 0.2f, IRadio.FM);
                         System.out.println(MLJP.getEstacion());
                     }
+                    updateRadioLabel();
                     break;
             }
         }
     }
 
     @FXML
-    // TODO: Fix this
     private void ChangeStationDown() throws IOException {
         System.out.println("ChangeStationDown");
         if (MLJP.getEncendido()){
             switch (MLJP.getBanda()) {
                 case IRadio.AM:
-                    if (MLJP.getEstacion() == 530) {
+                    if (MLJP.getEstacion() < 530) {
                         MLJP.setEstacion(1610, IRadio.AM);
+                        System.out.println(MLJP.getEstacion());
                     } else {
                         MLJP.setEstacion(MLJP.getEstacion() - 10, IRadio.AM);
                         System.out.println(MLJP.getEstacion());
                     }
+                    updateRadioLabel();
                     break;
                 case IRadio.FM:
-                    if (MLJP.getEstacion() == 87.9) {
+                    if (MLJP.getEstacion() < 87.9) {
                         MLJP.setEstacion(107.9f, IRadio.FM);
+                        System.out.println(MLJP.getEstacion());
                     } else {
                         MLJP.setEstacion(MLJP.getEstacion() - 0.2f, IRadio.FM);
                         System.out.println(MLJP.getEstacion());
                     }
+                    updateRadioLabel();
                     break;
             }
         }
